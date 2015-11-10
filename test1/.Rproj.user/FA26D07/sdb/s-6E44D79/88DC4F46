@@ -1,14 +1,14 @@
 {
-    "contents" : "",
+    "contents" : "library(kernlab)\ndata(spam)\nhead(spam)\n\n# a very simple algorithm of distinguishing spam\nplot(density(spam$your[spam$type == \"nonspam\"]), col=\"blue\", main=\"\", xlab=\"Frequency of 'your'\")\nlines(density(spam$your[spam$type == \"spam\"]), col=\"red\")\nabline(v=0.5,col=\"black\")\n\nprediction <- ifelse(spam$your>0.5,\"spam\",\"nonspam\")\ntable(prediction, spam$type)/length(spam$type)\n\n\n# in & out sample errors\n# in sample versus out of sample errors\ndata(spam)\nset.seed(333)\nsmallSpam = spam[sample(dim(spam)[1], size=10),]\nView(smallSpam)\nspamLabel = (smallSpam$type == \"spam\")*1+1\nplot(smallSpam$capitalAve, col = spamLabel)\n\n# prediction rule 1\nrule1 <- function(x){\n  prediction <- rep(NA, length(x))\n  prediction[x > 2.7] <- \"spam\"\n  prediction[x < 2.4] <- \"nonspam\"\n  prediction[x >= 2.4 & x <= 2.45] <- \"spam\"\n  prediction[x > 2.45 & x <= 2.7] <- \"nonspam\"\n  return(prediction)\n}\ntable(rule1(smallSpam$capitalAve), smallSpam$type)\n\n\n# prediction rule 2\nrule2 <- function(x){\n  prediction <- rep(NA, length(x))\n  prediction[x > 2.8] <- \"spam\"\n  prediction[x <= 2.8] <- \"nonspam\"\n  return(prediction)\n}\ntable(rule2(smallSpam$capitalAve), smallSpam$type)\n\n# apply rule1, rule2 to complete spam data\ntable(rule1(spam$capitalAve), spam$type)\nsum(rule1(spam$capitalAve) == spam$type)\n\ntable(rule2(spam$capitalAve), spam$type)\nsum(rule2(spam$capitalAve) == spam$type)\n\n",
     "created" : 1447117267690.000,
     "dirty" : false,
-    "encoding" : "",
+    "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "2493640164",
     "id" : "88DC4F46",
-    "lastKnownWriteTime" : 7011605692497750387,
-    "path" : null,
-    "project_path" : null,
+    "lastKnownWriteTime" : 1447120060,
+    "path" : "G:/Coursera/Practical Machine Learning/test1/test.R",
+    "project_path" : "test.R",
     "properties" : {
         "tempName" : "Untitled1"
     },
