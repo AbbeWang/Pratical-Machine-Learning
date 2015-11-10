@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1428943215735.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "B5493502",
+    "lastKnownWriteTime" : 1030057065,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "gss",
+        "contentUrl" : "content?title=gss&file=b9c81cfc514040529ef713805a4cf6d0.htm",
+        "displayedObservations" : 795,
+        "displayedVariables" : 2,
+        "totalObservations" : 795,
+        "variables" : 2
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

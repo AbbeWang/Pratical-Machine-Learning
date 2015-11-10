@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1428857823709.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "97BBC5B2",
+    "lastKnownWriteTime" : 1970151482,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "spam",
+        "contentUrl" : "content?title=spam&file=bf69dca9929944c3930b13c2f1ba14e8.htm",
+        "displayedObservations" : 1000,
+        "displayedVariables" : 58,
+        "totalObservations" : 4601,
+        "variables" : 58
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1428941385154.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "D3572EBB",
+    "lastKnownWriteTime" : 542395936,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "nc",
+        "contentUrl" : "content?title=nc&file=eeebd0fdf5c04e579b0a2234b655fbce.htm",
+        "displayedObservations" : 1000,
+        "displayedVariables" : 13,
+        "totalObservations" : 1000,
+        "variables" : 13
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}
