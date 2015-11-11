@@ -1,0 +1,18 @@
+{
+    "contents" : "# SPAM Example: Data splitting\nlibrary(caret)\nlibrary(kernlab)\ninTrain <- createDataPartition(y = spam$type, p=0.75, list=FALSE)\ntraining <- spam[inTrain,]\ntesting <- spam[-inTrain,]\ndim(training)\n\n# SPAM Example: Fit a model\nset.seed(32343)\nmodelFit <- train(type ~., data = training, method = \"glm\")\nmodelFit\nmodelFit$finalModel\n\n# SPAM Example: Prediction\npredictions <- predict(modelFit, newdata = testing)\npredictions\n\n# SPAM Example: Confusion Matrix\nconfusionMatrix(predictions, testing$type)\n\n",
+    "created" : 1447229313472.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1874401731",
+    "id" : "22C422C8",
+    "lastKnownWriteTime" : 1447230303,
+    "path" : "G:/Coursera/Practical Machine Learning/test1/test2.R",
+    "project_path" : "test2.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
