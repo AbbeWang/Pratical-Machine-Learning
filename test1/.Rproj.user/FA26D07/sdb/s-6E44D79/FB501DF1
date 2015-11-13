@@ -1,0 +1,25 @@
+{
+    "contents" : "",
+    "created" : 1447396111637.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "FB501DF1",
+    "lastKnownWriteTime" : 0,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "yejrqc82kc",
+        "caption" : "spam",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=spam&cache_key=yejrqc82kc",
+        "displayedObservations" : 4601,
+        "environment" : "",
+        "object" : "spam",
+        "totalObservations" : 4601,
+        "variables" : 58
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}
