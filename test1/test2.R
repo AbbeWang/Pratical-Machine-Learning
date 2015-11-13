@@ -86,6 +86,22 @@ cutWage <- cut2(training$wage, g=3)
 table(cutWage)
 
 # Boxplots with cut2
+p1 <- qplot(cutWage,age,data = training, fill=cutWage, geom = c("boxplot"))
+p1
+
+# Boxplots with points overlayed
+library(gridExtra)
+p2 <- qplot(cutWage, age, data=training, fill=cutWage,
+            geom = c("boxplot","jitter"))
+grid.arrange(p1,p2,ncol=2)
+
+# Tables
+t1 <- table(cutWage, training$jobclass)
+t1
+prop.table(t1,1)
+
+# Density plots
+qplot(wage, colour=education,data=training,geom="density")
 
 
 # SPAM Example: Confusion Matrix

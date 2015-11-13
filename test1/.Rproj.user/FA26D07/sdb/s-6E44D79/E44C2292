@@ -1,0 +1,18 @@
+{
+    "contents" : "library(caret)\nlibrary(kernlab)\ndata(spam)\ninTrain <- createDataPartition(y=spam$type,p=0.75,list=FALSE)\ntraining <- spam[inTrain,]\ntesting <- spam[-inTrain,]\nhist(training$capitalAve, main=\"\", xlab=\"ave. capital run length\")\nmean(training$capitalAve)\nsd(training$capitalAve)\n\n# Standardizing\ntrainCapAve <- training$capitalAve\ntrainCapAveS <- (trainCapAve - mean(trainCapAve))/sd(trainCapAve)\nmean(trainCapAveS)\nsd(trainCapAveS)\n\n# Standardizing - test set\n## note: use parameters from the training set\ntestCapAve <- testing$capitalAve\ntestCapAveS <- (testCapAve - mean(trainCapAve))/sd(trainCapAve)\nmean(testCapAveS)\nsd(testCapAveS)\n\n\n# Standardizing - preProcess function\npreObj <- preProcess(training[,-58], method = c(\"center\",\"scale\"))\ntrainCapAveS <- predict(preObj,training[,-58])$capitalAve\nmean(trainCapAveS)\nsd(trainCapAveS)\n\ntestCapAveS <- predict(preObj,testing[,-58])$capitalAve\nmean(testCapAveS)\nsd(testCapAveS)\n\n\n# Standardizing - preProcess argument\nset.seed(32343)\nmodelFit <- train(type ~., data = training,\n                  preProcess=c(\"center\",\"scale\"),\n                  method = \"glm\")\nmodelFit\n\n\n# Standardizing - Box-Cox transforms\npreObj <- preProcess(training[,-58],method=c(\"BoxCox\"))\ntrainCapAveS <- predict(preObj,training[,-58])$capitalAve\npar(mfrow=c(1,2))\nhist(trainCapAveS)\nqqnorm(trainCapAveS)\n\n\n\n# Standardizing - Imputing data\nset.seed(13343)\n\n# Make some values NA\ntraining$capAve <- training$capitalAve\nselectNA <- rbinom(dim(training)[1], size=1, prob=0.05)==1\ntraining$capAve[selectNA] <- NA\n\n# Impute and standardize\nlibrary(RANN)\npreObj <- preProcess(training[,-58], method=\"knnImpute\")\ncapAve <- predict(preObj,training[,-58])$capAve\n\n# Standardize true values\ncapAveTruth <- training$capitalAve\ncapAveTruth <- (capAveTruth - mean(capAveTruth))/sd(capAveTruth)\n\nquantile(capAve - capAveTruth)\nquantile((capAve - capAveTruth)[selectNA])\nquantile((capAve - capAveTruth)[!selectNA])\n\n",
+    "created" : 1447402787862.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2275019456",
+    "id" : "E44C2292",
+    "lastKnownWriteTime" : 1447406759,
+    "path" : "G:/Coursera/Practical Machine Learning/test1/014_Preprocessing.R",
+    "project_path" : "014_Preprocessing.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
