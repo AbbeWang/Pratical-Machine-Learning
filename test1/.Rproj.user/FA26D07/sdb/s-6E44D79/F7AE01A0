@@ -1,0 +1,25 @@
+{
+    "contents" : "",
+    "created" : 1447491372283.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "F7AE01A0",
+    "lastKnownWriteTime" : 201746768,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "jsbtmcdpbs",
+        "caption" : "M",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=M&cache_key=jsbtmcdpbs",
+        "displayedObservations" : 57,
+        "environment" : "",
+        "object" : "M",
+        "totalObservations" : 57,
+        "variables" : 57
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

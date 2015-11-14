@@ -1,0 +1,18 @@
+{
+    "contents" : "library(caret)\nlibrary(kernlab)\ndata(spam)\n\ninTrain <- createDataPartition(y=spam$type, p=0.75, list=FALSE)\ntraining <- spam[inTrain,]\ntesting <- spam[-inTrain,]\n\n# Correlated predictors\nM <- abs(cor(training[,-58]))\ndiag(M) <- 0\nwhich(M > 0.8, arr.ind = T)\n\nnames(spam)[c(34,32)]\nplot(spam[,34], spam[,32])\n\n\n# Rotate the plot\nX <- 0.71*training$num415 + 0.71*training$num857\nY <- 0.71*training$num415 - 0.71*training$num857\nplot(X,Y)\n\n# Principal components in R - prcomp\nsmallSpam <- spam[, c(34,32)]\nprComp <- prcomp(smallSpam)\nplot(prComp$x[,1], prComp$x[,2])\n\nprComp$rotation\n\n# PCA on SPAM data\ntypeColor <- ((spam$type == \"spam\")*1 + 1)\nprComp <- prcomp(log10(spam[, -58] + 1))\nplot(prComp$x[,1], prComp$x[,2], col=typeColor, xlab=\"PC1\", ylab=\"PC2\")\n\n# PCA with caret\npreProc <- preProcess(log10(spam[,-58]+1), method=\"pca\", pcaComp = 2)\nspamPC <- predict(preProc, log10(spam[, -58]+1))\nplot(spamPC[,1], spamPC[,2], col=typeColor)\n\n# Preprocessing with PCA\npreProc <- preProcess(log10(training[,-58]+1), method=\"pca\", pcaComp = 2)\ntrainPC <- predict(preProc, log10(training[,-58]+1))\nmodelFit <- train(training$type ~ ., method=\"glm\", data=trainPC)\n\ntestPC <- predict(preProc, log10(testing[,-58]+1))\nconfusionMatrix(testing$type, predict(modelFit, testPC))\n\n\n# Alternative (sets # of PCs)\nmodelFit <- train(training$type ~ ., method=\"glm\", preProcess=\"pca\", data=training)\nconfusionMatrix(testing$type, predict(modelFit, testing))\n\n\n\n\n\n\n",
+    "created" : 1447490733063.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1252242325",
+    "id" : "890B3592",
+    "lastKnownWriteTime" : 1447493430,
+    "path" : "G:/Coursera/Practical Machine Learning/test1/016_PCA.R",
+    "project_path" : "016_PCA.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
