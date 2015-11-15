@@ -1,0 +1,18 @@
+{
+    "contents" : "library(caret)\ndata(faithful)\nset.seed(333)\ninTrain <- createDataPartition(y=faithful$waiting, p=0.5, list=FALSE)\ntrainFaith <- faithful[inTrain,]\ntestFaith <- faithful[-inTrain,]\nhead(trainFaith)\n\n# Eruption duration versus waiting time\nplot(trainFaith$waiting, trainFaith$eruptions, pch=19, col=\"blue\", xlab=\"Waiting\", ylab=\"Duration\")\n\n# Fit a linear model\nlm1 <- lm(eruptions ~ waiting, data=trainFaith)\nsummary(lm1)\n\n# Model fit\nplot(trainFaith$waiting, trainFaith$eruptions, pch=19, col=\"blue\", xlab=\"Waiting\", ylab=\"Duration\")\nlines(trainFaith$waiting, lm1$fitted, lwd=3)\n\n# Predict a new value\nnewdata <- data.frame(waiting=80)\npredict(lm1, newdata)\n\n\n# Plot predictions - training and test\npar(mfrow = c(1,2))\nplot(trainFaith$waiting, trainFaith$eruptions, pch=19, col=\"blue\", xlab=\"Waiting\", ylab=\"Duration\")\nlines(trainFaith$waiting, predict(lm1), lwd=3)\nplot(testFaith$waiting, testFaith$eruptions, pch=19, col=\"blue\", xlab=\"Waiting\", ylab=\"Duration\")\nlines(testFaith$waiting, predict(lm1, newdata=testFaith), lwd=3)\n\n# Get training set/test set errors\n# Calculate RMSE on training\nsqrt(sum((lm1$fitted-trainFaith$eruptions)^2))\n\n# Calculate RMSE on test\nsqrt(sum((predict(lm1, newdata=testFaith)-testFaith$eruptions)^2))\n\n# Prediction intervals\npar(mfrow = c(1,1))\npred1 <- predict(lm1, newdata=testFaith, interval=\"prediction\")\nord <- order(testFaith$waiting)\nplot(testFaith$waiting, testFaith$eruptions, pch=19, col=\"blue\")\nmatlines(testFaith$waiting[ord], pred1[ord,], type=\"l\", col=c(1,2,2), lty=c(1,1,1), lwd=3)\n\n# Same process with caret\nmodFit <- train(eruptions ~ waiting, data=trainFaith, method=\"lm\")\nsummary(modFit$finalModel)\n\n",
+    "created" : 1447571257377.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2889393223",
+    "id" : "F0C70AEB",
+    "lastKnownWriteTime" : 1447577170,
+    "path" : "G:/Coursera/Practical Machine Learning/test1/017_Regression.R",
+    "project_path" : "017_Regression.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

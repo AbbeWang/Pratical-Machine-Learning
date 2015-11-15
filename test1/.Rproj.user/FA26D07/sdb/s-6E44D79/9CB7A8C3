@@ -1,0 +1,25 @@
+{
+    "contents" : "",
+    "created" : 1447571393879.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "9CB7A8C3",
+    "lastKnownWriteTime" : 0,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "oeziekvhhv",
+        "caption" : "faithful",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=faithful&cache_key=oeziekvhhv",
+        "displayedObservations" : 272,
+        "environment" : "",
+        "object" : "faithful",
+        "totalObservations" : 272,
+        "variables" : 2
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

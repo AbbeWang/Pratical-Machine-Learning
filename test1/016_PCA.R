@@ -49,9 +49,3 @@ confusionMatrix(testing$type, predict(modelFit, testPC))
 # Alternative (sets # of PCs)
 modelFit <- train(training$type ~ ., method="glm", preProcess="pca", data=training)
 confusionMatrix(testing$type, predict(modelFit, testing))
-
-
-
-
-
-
