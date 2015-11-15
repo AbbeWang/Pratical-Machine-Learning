@@ -1,0 +1,18 @@
+{
+    "contents" : "# Question 1\nlibrary(AppliedPredictiveModeling)\nlibrary(caret)\ndata(AlzheimerDisease)\n\nadData = data.frame(diagnosis,predictors)\ntrainIndex = createDataPartition(diagnosis, p = 0.50,list=FALSE)\ntraining = adData[trainIndex,]\ntesting = adData[-trainIndex,]\n\n\n# Question 2\nlibrary(AppliedPredictiveModeling)\ndata(concrete)\nlibrary(caret)\nset.seed(1000)\ninTrain = createDataPartition(mixtures$CompressiveStrength, p = 3/4)[[1]]\ntraining = mixtures[ inTrain,]\ntesting = mixtures[-inTrain,]\n\nsp <- concrete$Superplasticizer\nsummary(sp)\ntable(sp)\nhist(sp)\nlgsp <- log(sp)\n\n\n# Qustion 3\nlibrary(caret)\nlibrary(AppliedPredictiveModeling)\nset.seed(3433)\ndata(AlzheimerDisease)\nadData = data.frame(diagnosis,predictors)\ninTrain = createDataPartition(adData$diagnosis, p = 3/4)[[1]]\ntraining = adData[ inTrain,]\ntesting = adData[-inTrain,]\n\nnames(training)\n\nsubtrain <- training[c(58:69)]\nprComp <- prcomp(subtrain)\nprComp$sdev\n0.9*sum(prComp$sdev)<sum(prComp$sdev[c(1:8)])\n\n# using caret\npreProc <- preProcess(training[,c(58:69)], method=\"pca\")\ntrainPC <- predict(preProc, training[,c(58:69)])\nsdev <- sapply(trainPC[c(1:10)], sd)\n0.9*sum(sdev)<sum(sdev[c(1:9)])\n\n\n# Question 4\nlibrary(caret)\nlibrary(AppliedPredictiveModeling)\nset.seed(3433)\ndata(AlzheimerDisease)\nadData = data.frame(diagnosis,predictors)\ninTrain = createDataPartition(adData$diagnosis, p = 3/4)[[1]]\ntraining = adData[inTrain,]\ntesting = adData[-inTrain,]\n\n# using the predictors as they are\nsubtrain <- training[c(1,58:69)]\nmodelFit <- train(subtrain$diagnosis ~ ., method=\"glm\", data=subtrain[,-1])\nconfusionMatrix(testing$diagnosis, predict(modelFit, testing[,-1]))\n\n\n# pca - 80%\npreProc <- preProcess(subtrain[,-1], method=\"pca\", pcaComp = 8)\ntrainPC <- predict(preProc, subtrain[,-1])\nsdev <- sapply(trainPC, sd)\n0.8*sum(sdev)<sum(sdev[c(1:8)])\nmodelFit <- train(subtrain$diagnosis ~ ., method=\"glm\", data=trainPC)\n\ntestPC <- predict(preProc, testing[,-1])\nconfusionMatrix(testing$diagnosis, predict(modelFit, testPC))\n\n",
+    "created" : 1447611217709.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "362020871",
+    "id" : "D1C87AAB",
+    "lastKnownWriteTime" : 1447616739,
+    "path" : "G:/Coursera/Practical Machine Learning/test1/quiz2.R",
+    "project_path" : "quiz2.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

@@ -1,0 +1,25 @@
+{
+    "contents" : "",
+    "created" : 1447612782889.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "730DEF9D",
+    "lastKnownWriteTime" : 27303403455512684,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "2jq3tvm71o",
+        "caption" : "subtrain",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=subtrain&cache_key=2jq3tvm71o",
+        "displayedObservations" : "251",
+        "environment" : "",
+        "object" : "subtrain",
+        "totalObservations" : "251",
+        "variables" : "13"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

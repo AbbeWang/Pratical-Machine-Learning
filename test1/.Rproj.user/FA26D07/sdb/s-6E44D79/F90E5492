@@ -1,0 +1,25 @@
+{
+    "contents" : "",
+    "created" : 1447612255450.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "F90E5492",
+    "lastKnownWriteTime" : 537174272,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "maixwgqfzs",
+        "caption" : "training",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=training&cache_key=maixwgqfzs",
+        "displayedObservations" : 251,
+        "environment" : "",
+        "object" : "training",
+        "totalObservations" : 251,
+        "variables" : 131
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

@@ -1,0 +1,25 @@
+{
+    "contents" : "",
+    "created" : 1447616393482.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "87C055DB",
+    "lastKnownWriteTime" : 27303403455512684,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "ezw4ljn7ap",
+        "caption" : "trainData",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=trainData&cache_key=ezw4ljn7ap",
+        "displayedObservations" : 251,
+        "environment" : "",
+        "object" : "trainData",
+        "totalObservations" : 251,
+        "variables" : 12
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}
